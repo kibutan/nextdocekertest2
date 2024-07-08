@@ -1,0 +1,15 @@
+services:
+  node:
+    image: "node:21"
+    user: "node"
+    container_name: node-next
+    working_dir: /home/node/app
+    volumes:
+      - ./app:/home/node/app
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    tty: true
+    environment:
+      - WATCHPACK_POLLING=true
